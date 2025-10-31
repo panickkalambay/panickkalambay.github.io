@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-<hr style="border: 1px solid rgba(255,0,0,0.8);">
+<hr style="border: 1px solid #8B0000; opacity: 0.8;">
 Hello! 👋  
 I am **Dr. Kalambay**, and <span style="color:red;">this website is currently under construction</span>. Soon, you will find information about my research group’s activities, including our projects, publications, and presentations.
 
