@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "air" # Currently available options are "default", "air"
-title                    : "Panick Kalambay — Transportation Research"
+title                    : "Kalambay — Transportation Research Group"
 title_separator          : "-"
 name                     : &name "Panick Kalambay"
 description              : &description "Academic portfolio of Panick Kalambay — research, publications, talks, and projects."   # Update this with a general description of your site, this is the default if not overridden by a page
