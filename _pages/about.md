@@ -8,7 +8,7 @@ redirect_from:
 ---
 <hr style="border: 1px solid #8B0000; opacity: 0.8;">
 Hello! 👋  
-I am **Dr. Kalambay**, and <span style="color:red;">this website is currently under construction</span>. Soon, you will find information about my research group’s activities, including our projects, publications, and presentations.
+I am **Dr. Kalambay**. <span style="color:red;">This website is currently under construction</span>. Soon, you will find information about my research group’s activities, including our projects, publications, and presentations.
 
 <h3 style="color:#8B0000; font-weight:bold;">Academic background</h3>
 Assistant Professor, Texas Southern University (09/2025 – Present)  
