@@ -1,7 +1,7 @@
 ---
 title: "Fundamentals of Transportation"
 collection: teaching
-type: "Graduate course"
+type: "Graduate Course"
 permalink: /teaching/2014-spring-teaching-1
 venue: "Texas Southern University, Department of Transportation Studies"
 date: 2025-09-01
