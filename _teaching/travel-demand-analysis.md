@@ -7,12 +7,3 @@ venue: "Texas Southern University, Department of Transportation Studies"
 date: 2026-01-12
 location: "Houston - TX, USA"
 ---
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
