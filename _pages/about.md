@@ -9,10 +9,10 @@ redirect_from:
 
 Academic background
 ------
-- **Assistant Professor**, Texas Southern University (09/2025 – Present)  
-- **Ph.D. in Civil Engineering (Transportation)**, University of North Carolina at Charlotte (2020 – 2023)  
-- **M.S. in Civil Engineering (Transportation)**, Osaka University (2017 – 2019)  
-- **B.S. in Civil Engineering (Structure & Pavement)**, University of Kinshasa (2012 – 2015)
+- Assistant Professor, Texas Southern University (09/2025 – Present)  
+- Ph.D. in Civil Engineering (Transportation), University of North Carolina at Charlotte (2020 – 2023)  
+- M.S. in Civil Engineering (Transportation), Osaka University (2017 – 2019)  
+- B.S. in Civil Engineering (Structure & Pavement), University of Kinshasa (2012 – 2015)
 
 Research interests
 ------
@@ -24,7 +24,7 @@ This website is under construction.
 
 Contact info
 ------
-Email: panick.kalambay@tsu.edu
-Office: 713-313-1854   
-Spearman Technology Building, 208
+Email: panick.kalambay@tsu.edu<br>
+Office: 713-313-1854<br>   
+Spearman Technology Building, 208<br>
 3100 Cleburne Street, Houston, TX 77004
