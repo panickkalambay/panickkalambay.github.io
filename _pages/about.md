@@ -10,7 +10,7 @@ redirect_from:
 Hello! 👋  
 I am **Dr. Kalambay**, and <span style="color:red;">this website is currently under construction</span>. Soon, you will find information about my research group’s activities, including our projects, publications, and presentations.
 
-**Academic background**<br> 
+<h3 style="color:#8B0000; font-weight:bold;">Academic background</h3><br> 
 Assistant Professor, Texas Southern University (09/2025 – Present)  
 Ph.D. in Civil Engineering (Transportation), University of North Carolina at Charlotte (2020 – 2023)  
 M.S. in Civil Engineering (Transportation), Osaka University (2017 – 2019)  
@@ -19,7 +19,7 @@ B.S. in Civil Engineering (Structure & Pavement), University of Kinshasa (2012 �
 **Research interests**<br> 
 I am interested in traffic safety and transportation planning from multidisciplinary and interdisciplinary perspectives. I have experience leveraging GIS capabilities and applying advanced statistical methods, as well as machine and deep learning techniques—including computer vision algorithms—to address transportation-related research problems.
 
-**Updates**<br>
+**Updates**
 - Dr. Kalambay joined Texas Southern University in Fall 2025 following two years as a Postdoctoral Research Associate at the University of Washington Tacoma.
 
 **Contact info**<br> 
