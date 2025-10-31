@@ -25,7 +25,7 @@ author:
   # Biographic information
   avatar           : "Headshot_Panick.jpg"
   name             : "Panick Kalambay"
-  pronouns         : "He/Him"  
+  pronouns         : #"He/Him"  
   bio              : "Assistant Professor"
   location         : "Houston, Texas"
   employer         : "Texas Southern University"
