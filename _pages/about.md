@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 Hello! 👋  
-I am **Panick Kalambay**, and <span style="color:red;">this website is currently under construction</span>. Soon, you will find my publications, research projects, and more here.
+I am **Dr. Kalambay**, and <span style="color:red;">this website is currently under construction</span>. Soon, you will find information about my research group’s activities, including our projects, publications, and presentations.
 
 Academic background
 ------
