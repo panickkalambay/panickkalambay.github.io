@@ -16,7 +16,7 @@ Ph.D. in Civil Engineering (Transportation), University of North Carolina at Cha
 M.S. in Civil Engineering (Transportation), Osaka University (2017 – 2019)  
 B.S. in Civil Engineering (Structure & Pavement), University of Kinshasa (2012 – 2015)
 
-**Research interests**<br> 
+**Research interests**<br>
 I am interested in traffic safety and transportation planning from multidisciplinary and interdisciplinary perspectives. I have experience leveraging GIS capabilities and applying advanced statistical methods, as well as machine and deep learning techniques—including computer vision algorithms—to address transportation-related research problems.
 
 **Updates**
