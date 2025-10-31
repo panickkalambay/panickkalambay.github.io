@@ -7,10 +7,12 @@ redirect_from:
   - /about.html
 ---
 
-Assistant Professor, Texas Southern University, 09/2025 - current
-Ph.D. in Civil Engineering (Transportation), University of North Carolina at Charlotte, 2020 - 2023
-Master in Civil Engineering (Transportation), The University of Osaka, 2017 - 2019
-Bachelor in Civil Engineering (Structure & Pavement), University of Kinshasa, 2012 - 2015
+Academic background
+------
+- **Assistant Professor**, Texas Southern University (09/2025 – Present)  
+- **Ph.D. in Civil Engineering (Transportation)**, University of North Carolina at Charlotte (2020 – 2023)  
+- **M.S. in Civil Engineering (Transportation)**, Osaka University (2017 – 2019)  
+- **B.S. in Civil Engineering (Structure & Pavement)**, University of Kinshasa (2012 – 2015)
 
 Research interests
 ------
