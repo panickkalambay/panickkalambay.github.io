@@ -1,18 +1,21 @@
 ---
 permalink: /
-title: "About me"
+title: "Welcome to my personal website!"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+Hello! 👋  
+I am **Panick Kalambay**, and this website is currently under construction.  
+Soon, you will find my publications, research projects, and more here.
 
 Academic background
 ------
-- Assistant Professor, Texas Southern University (09/2025 – Present)  
-- Ph.D. in Civil Engineering (Transportation), University of North Carolina at Charlotte (2020 – 2023)  
-- M.S. in Civil Engineering (Transportation), Osaka University (2017 – 2019)  
-- B.S. in Civil Engineering (Structure & Pavement), University of Kinshasa (2012 – 2015)
+Assistant Professor, Texas Southern University (09/2025 – Present)  
+Ph.D. in Civil Engineering (Transportation), University of North Carolina at Charlotte (2020 – 2023)  
+M.S. in Civil Engineering (Transportation), Osaka University (2017 – 2019)  
+B.S. in Civil Engineering (Structure & Pavement), University of Kinshasa (2012 – 2015)
 
 Research interests
 ------
@@ -25,6 +28,6 @@ This website is under construction.
 Contact info
 ------
 Email: panick.kalambay@tsu.edu<br>
-Office: 713-313-1854<br>   
+Office: 713-313-1854<br>
 Spearman Technology Building, 208<br>
 3100 Cleburne Street, Houston, TX 77004
