@@ -6,11 +6,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
+<hr style="border: 1px solid rgba(255,0,0,0.8);">
 Hello! 👋  
 I am **Dr. Kalambay**, and <span style="color:red;">this website is currently under construction</span>. Soon, you will find information about my research group’s activities, including our projects, publications, and presentations.
 
-**Academic background**
-<hr style="border: 1px solid rgba(255,0,0,0.8);">
+Academic background
+------
 Assistant Professor, Texas Southern University (09/2025 – Present)  
 Ph.D. in Civil Engineering (Transportation), University of North Carolina at Charlotte (2020 – 2023)  
 M.S. in Civil Engineering (Transportation), Osaka University (2017 – 2019)  
