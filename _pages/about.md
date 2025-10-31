@@ -23,7 +23,7 @@ I am interested in traffic safety and transportation planning from multidiscipli
 
 Updates
 ------
-This website is under construction.
+- Dr. Kalambay joined Texas Southern University in Fall 2025 following two years as a Postdoctoral Research Associate at the University of Washington Tacoma.
 
 Contact info
 ------
