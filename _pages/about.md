@@ -24,6 +24,6 @@ I am interested in traffic safety and tansportation planning from multidisciplin
 
 <h3 style="color:#8B0000; font-weight:bold;">Contact info</h3>
 Email: panick.kalambay@tsu.edu<br>
-Office: 713-313-1854<br>
+Office: 713-313-7997<br>
 Spearman Technology Building, 208<br>
 3100 Cleburne Street, Houston, TX 77004
