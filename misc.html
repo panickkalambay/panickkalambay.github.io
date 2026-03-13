@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misc — Panick Kalambay</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #333;
+      background: #fff;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff !important;
+      padding: 0.55rem 0;
+    }
+    .navbar-brand { font-weight: 700; font-size: 1rem; color: #222 !important; }
+    .nav-link { font-size: 0.88rem; color: #555 !important; padding: 0.35rem 0.85rem !important; transition: color 0.15s; }
+    .nav-link:hover { color: #c0392b !important; }
+    .nav-link.active { color: #c0392b !important; font-weight: 700; }
+
+    /* ── PAGE ── */
+    .page-wrap { max-width: 940px; margin: 2.5rem auto 5rem; padding: 0 1.5rem; }
+
+    .page-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem; font-weight: 700; color: #111; margin-bottom: 0.3rem;
+    }
+    .page-subtitle { font-size: 0.88rem; color: #888; margin-bottom: 2rem; }
+
+    /* ── SECTION TITLE ── */
+    .sec-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem; font-weight: 700; color: #111;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #c0392b;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      margin-top: 2.25rem;
+    }
+
+    /* ── YOUTUBE GRID ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .video-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      background: #fff;
+    }
+    .video-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); border-color: #ccc; }
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+      background: #111;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .video-info { padding: 0.85rem 1rem; }
+    .video-tag {
+      display: inline-block;
+      font-size: 0.67rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.18rem 0.55rem; border-radius: 3px;
+      margin-bottom: 0.45rem;
+    }
+    .tag-talk    { background: #eaf3fb; color: #1a6fa8; }
+    .tag-media   { background: #fef3e2; color: #b5620a; }
+    .tag-lecture { background: #eaf6ef; color: #1a7a3e; }
+    .tag-mine    { background: #fdecea; color: #c0392b; }
+
+    .video-title {
+      font-weight: 700; font-size: 0.88rem; color: #111;
+      line-height: 1.4; margin-bottom: 0.3rem;
+    }
+    .video-meta { font-size: 0.78rem; color: #888; line-height: 1.5; }
+
+    .video-note {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      background: #fffbf0;
+      border: 1px solid #f0d080;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.65;
+    }
+    .video-note strong { color: #333; }
+
+    /* ── TALKS / PRESENTATIONS ── */
+    .talks-list { list-style: none; padding: 0; margin: 0; }
+    .talk-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      align-items: flex-start;
+    }
+    .talk-item:last-child { border-bottom: none; }
+    .talk-year {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem; color: #c0392b;
+      min-width: 44px; flex-shrink: 0; padding-top: 2px;
+    }
+    .talk-body { flex: 1; }
+    .talk-title { font-weight: 700; font-size: 0.9rem; color: #111; margin-bottom: 0.2rem; line-height: 1.4; }
+    .talk-where { font-size: 0.82rem; color: #666; line-height: 1.55; }
+    .talk-where em { color: #888; font-style: italic; }
+
+    /* ── AWARDS ── */
+    .awards-list { display: flex; flex-direction: column; gap: 0; }
+    .award-row {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 0.9rem 0; border-bottom: 1px solid #f0f0f0;
+    }
+    .award-row:last-child { border-bottom: none; }
+    .award-icon {
+      width: 34px; height: 34px; flex-shrink: 0;
+      background: #fff8ec; border: 1px solid #f0d080;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .award-body {}
+    .award-name { font-weight: 700; font-size: 0.9rem; color: #111; margin-bottom: 0.15rem; }
+    .award-detail { font-size: 0.82rem; color: #666; line-height: 1.5; }
+
+    /* ── SERVICE ── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .service-card {
+      border: 1px solid #e5e5e5; border-radius: 6px;
+      padding: 1rem 1.1rem; background: #fff;
+    }
+    .service-card-title {
+      font-weight: 700; font-size: 0.85rem; color: #111;
+      margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .service-card-title svg { width: 14px; height: 14px; color: #c0392b; flex-shrink: 0; }
+    .service-list { list-style: none; padding: 0; margin: 0; }
+    .service-list li {
+      font-size: 0.82rem; color: #555; line-height: 1.6;
+      padding: 0.2rem 0; border-bottom: 1px solid #f5f5f5;
+    }
+    .service-list li:last-child { border-bottom: none; }
+
+    /* ── FUN FACTS / ABOUT ── */
+    .fun-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .fun-card {
+      border: 1px solid #e5e5e5; border-radius: 6px;
+      padding: 1.1rem 1.1rem; text-align: center;
+      background: #fafafa;
+    }
+    .fun-emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .fun-label { font-size: 0.82rem; color: #888; line-height: 1.55; }
+    .fun-label strong { display: block; color: #111; font-size: 0.88rem; margin-bottom: 0.15rem; }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      border-top: 1px solid #e5e5e5; padding: 1rem 1.5rem;
+      max-width: 940px; margin: 0 auto;
+      font-size: 0.78rem; color: #999;
+    }
+    .page-footer a { color: #999; }
+
+    @media (max-width: 600px) {
+      .video-grid, .service-grid, .fun-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md sticky-top">
+  <div class="container-fluid px-3" style="max-width:940px; margin:0 auto;">
+    <a class="navbar-brand" href="index.html">panickkalambay.github.io</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+        <li class="nav-item"><a class="nav-link active" href="misc.html">Misc</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="page-wrap">
+
+  <h1 class="page-title">Misc</h1>
+  <p class="page-subtitle">Talks, videos, service, awards, and a few things about me.</p>
+
+  <!-- ── YOUTUBE VIDEOS ── -->
+  <div class="sec-title">Videos</div>
+
+  <div class="video-grid">
+
+    <!-- Video 1: placeholder — replace with your own -->
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/your-video-id-1"
+          title="Your Talk or Video 1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-info">
+        <span class="video-tag tag-mine">My Talk</span>
+        <div class="video-title">Your Talk Title Here</div>
+        <div class="video-meta">Conference or Event Name · Year</div>
+      </div>
+    </div>
+
+    <!-- Video 2: placeholder -->
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/your-video-id-2"
+          title="Your Talk or Video 2"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-info">
+        <span class="video-tag tag-talk">Talk</span>
+        <div class="video-title">Your Talk Title Here</div>
+        <div class="video-meta">Conference or Event Name · Year</div>
+      </div>
+    </div>
+
+    <!-- Video 3: placeholder -->
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/your-video-id-3"
+          title="Media or Lecture Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-info">
+        <span class="video-tag tag-media">Media</span>
+        <div class="video-title">Your Media or Lecture Title Here</div>
+        <div class="video-meta">Source · Year</div>
+      </div>
+    </div>
+
+  </div><!-- /video-grid -->
+
+  <div class="video-note">
+    <strong>🎬 Add your videos:</strong> Replace <code>your-video-id-1</code>, <code>your-video-id-2</code>, etc.
+    with the actual YouTube video IDs from your talk recordings, lectures, or media appearances.
+    You can find a video's ID in its URL: <code>youtube.com/watch?v=<strong>VIDEO_ID</strong></code>.
+    Add or remove cards as needed.
+  </div>
+
+  <!-- ── TALKS & PRESENTATIONS ── -->
+  <div class="sec-title">Talks &amp; Presentations</div>
+  <ul class="talks-list">
+
+    <li class="talk-item">
+      <div class="talk-year">2025</div>
+      <div class="talk-body">
+        <div class="talk-title">Autonomous Shuttles in the Public Eye: Mediators on the Path to Successful Expansion</div>
+        <div class="talk-where">Transportation Research Board Annual Meeting (TRB 2025) · <em>Washington, D.C.</em></div>
+      </div>
+    </li>
+
+    <li class="talk-item">
+      <div class="talk-year">2025</div>
+      <div class="talk-body">
+        <div class="talk-title">Bridging Disciplinary Gaps in the Transportation Workforce</div>
+        <div class="talk-where">Transportation Research Board Annual Meeting (TRB 2025) · <em>Washington, D.C.</em></div>
+      </div>
+    </li>
+
+    <li class="talk-item">
+      <div class="talk-year">2024</div>
+      <div class="talk-body">
+        <div class="talk-title">Deep Learning and Statistical Models for Weather-Related Crash Severity Prediction</div>
+        <div class="talk-where">Mineta Transportation Institute Research Symposium · <em>San Jose, CA</em></div>
+      </div>
+    </li>
+
+    <li class="talk-item">
+      <div class="talk-year">2023</div>
+      <div class="talk-body">
+        <div class="talk-title">GIS-Based Spatial Analysis of Bicycle-Vehicle Crashes in Urban Areas</div>
+        <div class="talk-where">Transportation Research Board Annual Meeting (TRB 2023) · <em>Washington, D.C.</em></div>
+      </div>
+    </li>
+
+    <li class="talk-item">
+      <div class="talk-year">2022</div>
+      <div class="talk-body">
+        <div class="talk-title">Before-After Impact Assessment of COVID-19 on Bike-Sharing Ridership</div>
+        <div class="talk-where">Transportation Research Board Annual Meeting (TRB 2022) · <em>Washington, D.C.</em></div>
+      </div>
+    </li>
+
+  </ul>
+
+  <!-- ── AWARDS & RECOGNITION ── -->
+  <div class="sec-title">Awards &amp; Recognition</div>
+  <div class="awards-list">
+
+    <div class="award-row">
+      <div class="award-icon">🏆</div>
+      <div class="award-body">
+        <div class="award-name">Membership — Safety Data, Analysis, and Performance Committee</div>
+        <div class="award-detail">Transportation Research Board (TRB) · 2024</div>
+      </div>
+    </div>
+
+    <div class="award-row">
+      <div class="award-icon">🎓</div>
+      <div class="award-body">
+        <div class="award-name">Ph.D. Graduate — Civil Engineering (Transportation)</div>
+        <div class="award-detail">University of North Carolina at Charlotte · 2023</div>
+      </div>
+    </div>
+
+    <div class="award-row">
+      <div class="award-icon">📄</div>
+      <div class="award-body">
+        <div class="award-name">U.S. Department of Transportation Funded Research</div>
+        <div class="award-detail">Mineta Transportation Institute / USDOT University Transportation Centers Program · 2023</div>
+      </div>
+    </div>
+
+    <div class="award-row">
+      <div class="award-icon">🌍</div>
+      <div class="award-body">
+        <div class="award-name">International Graduate Fellowship</div>
+        <div class="award-detail">University of Osaka, Japan · 2017 – 2019</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── SERVICE ── -->
+  <div class="sec-title">Academic Service</div>
+  <div class="service-grid">
+
+    <div class="service-card">
+      <div class="service-card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Reviewer
+      </div>
+      <ul class="service-list">
+        <li>Accident Analysis &amp; Prevention</li>
+        <li>Transportation Research Record</li>
+        <li>Journal of Transportation Safety &amp; Security</li>
+        <li>International Journal of Transportation Science and Technology</li>
+        <li>Transportation Research Part F</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Committee Memberships
+      </div>
+      <ul class="service-list">
+        <li>TRB — Safety Data, Analysis &amp; Performance</li>
+        <li>TRB — Transportation Research Board Annual Meeting</li>
+        <li>ITE — Institute of Transportation Engineers</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Mentoring &amp; Outreach
+      </div>
+      <ul class="service-list">
+        <li>Graduate student research mentoring</li>
+        <li>HBCU STEM outreach initiatives at TSU</li>
+        <li>Undergraduate research advising</li>
+      </ul>
+    </div>
+
+  </div><!-- /service-grid -->
+
+  <!-- ── ABOUT ME / FUN FACTS ── -->
+  <div class="sec-title">About Me</div>
+  <div class="fun-grid">
+
+    <div class="fun-card">
+      <div class="fun-emoji">🌍</div>
+      <div class="fun-label">
+        <strong>From Kinshasa, DR Congo</strong>
+        Grew up in Central Africa before pursuing graduate studies across three continents.
+      </div>
+    </div>
+
+    <div class="fun-card">
+      <div class="fun-emoji">🇯🇵</div>
+      <div class="fun-label">
+        <strong>Studied in Osaka, Japan</strong>
+        Earned my M.S. at the University of Osaka from 2017 to 2019.
+      </div>
+    </div>
+
+    <div class="fun-card">
+      <div class="fun-emoji">🚦</div>
+      <div class="fun-label">
+        <strong>Traffic Safety Nerd</strong>
+        Passionate about reducing road crashes and making streets safer for everyone.
+      </div>
+    </div>
+
+    <div class="fun-card">
+      <div class="fun-emoji">🤖</div>
+      <div class="fun-label">
+        <strong>AI in Civil Engineering</strong>
+        Excited about applying computer vision and deep learning to transportation problems.
+      </div>
+    </div>
+
+    <div class="fun-card">
+      <div class="fun-emoji">🏙️</div>
+      <div class="fun-label">
+        <strong>Based in Houston, TX</strong>
+        One of America's most diverse and fastest-growing cities — a great lab for urban research.
+      </div>
+    </div>
+
+    <div class="fun-card">
+      <div class="fun-emoji">📚</div>
+      <div class="fun-label">
+        <strong>Languages</strong>
+        Fluent in French, English, and Lingala.
+      </div>
+    </div>
+
+  </div><!-- /fun-grid -->
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<div class="page-footer">
+  © 2025 Panick Kalambay &nbsp;·&nbsp; Texas Southern University &nbsp;·&nbsp;
+  Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

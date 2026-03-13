@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teaching — Panick Kalambay</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #333;
+      background: #fff;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff !important;
+      padding: 0.55rem 0;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #222 !important;
+    }
+    .nav-link {
+      font-size: 0.88rem;
+      color: #555 !important;
+      padding: 0.35rem 0.85rem !important;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: #c0392b !important; }
+    .nav-link.active { color: #c0392b !important; font-weight: 700; }
+
+    /* ── PAGE ── */
+    .page-wrap {
+      max-width: 940px;
+      margin: 2.5rem auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 0.3rem;
+    }
+    .page-subtitle {
+      font-size: 0.88rem;
+      color: #888;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* ── SECTION HEADING ── */
+    .sec-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #c0392b;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      margin-top: 2.25rem;
+    }
+
+    /* ── PHILOSOPHY BLOCK ── */
+    .philosophy-box {
+      background: #fafafa;
+      border-left: 4px solid #c0392b;
+      padding: 1.1rem 1.4rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 0.5rem;
+    }
+    .philosophy-box p {
+      font-size: 0.91rem;
+      line-height: 1.85;
+      color: #444;
+      margin: 0;
+    }
+    .philosophy-box p + p { margin-top: 0.75rem; }
+
+    /* ── COURSE CARDS ── */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .course-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 1.1rem 1.25rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+      background: #fff;
+    }
+    .course-card:hover {
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+      border-color: #ccc;
+    }
+
+    .course-tag {
+      display: inline-block;
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: 3px;
+      margin-bottom: 0.65rem;
+    }
+    .tag-undergrad  { background: #eaf3fb; color: #1a6fa8; }
+    .tag-grad       { background: #fef3e2; color: #b5620a; }
+    .tag-current    { background: #eaf6ef; color: #1a7a3e; }
+
+    .course-code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 0.2rem;
+    }
+    .course-title {
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: #111;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .course-meta {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.6rem;
+      line-height: 1.55;
+    }
+    .course-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-right: 0.75rem;
+    }
+    .course-meta svg {
+      width: 12px; height: 12px;
+      flex-shrink: 0;
+      color: #aaa;
+    }
+    .course-desc {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* current-semester badge */
+    .current-dot {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 8px; height: 8px;
+      background: #27ae60;
+      border-radius: 50%;
+    }
+    .current-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1px solid rgba(39,174,96,0.35);
+      animation: ping 1.8s ease-in-out infinite;
+    }
+    @keyframes ping {
+      0%   { transform: scale(1);   opacity: 0.6; }
+      70%  { transform: scale(1.8); opacity: 0; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    /* ── SEMESTER TABLE (past) ── */
+    .sem-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .sem-table th {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #888;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 0.75rem;
+      background: #fafafa;
+      text-align: left;
+    }
+    .sem-table td {
+      padding: 0.7rem 0.75rem;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+      color: #444;
+      line-height: 1.55;
+    }
+    .sem-table tr:last-child td { border-bottom: none; }
+    .sem-table tr:hover td { background: #fdfcfc; }
+    .sem-table .course-code-cell {
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      color: #888;
+      white-space: nowrap;
+    }
+    .sem-table .course-name-cell { font-weight: 700; color: #111; }
+    .sem-table .role-cell {
+      font-size: 0.8rem; color: #888; white-space: nowrap;
+    }
+    .sem-table .inst-cell { font-size: 0.82rem; color: #555; }
+
+    /* ── OFFICE HOURS BLOCK ── */
+    .oh-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .oh-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 1rem 1.1rem;
+      background: #fff;
+    }
+    .oh-day {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #111;
+      margin-bottom: 0.25rem;
+    }
+    .oh-time {
+      font-size: 0.82rem;
+      color: #c0392b;
+      margin-bottom: 0.2rem;
+    }
+    .oh-location {
+      font-size: 0.78rem;
+      color: #888;
+    }
+    .oh-note {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.65;
+    }
+    .oh-note a { color: #2060b0; text-decoration: none; }
+    .oh-note a:hover { text-decoration: underline; }
+
+    /* ── DIVIDER ── */
+    .soft-divider { border-top: 1px solid #ebebeb; margin: 0.5rem 0; }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 1rem 1.5rem;
+      max-width: 940px;
+      margin: 0 auto;
+      font-size: 0.78rem;
+      color: #999;
+    }
+    .page-footer a { color: #999; }
+
+    @media (max-width: 600px) {
+      .courses-grid { grid-template-columns: 1fr; }
+      .oh-grid      { grid-template-columns: 1fr; }
+      .sem-table .inst-cell,
+      .sem-table .role-cell { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar navbar-expand-md sticky-top">
+  <div class="container-fluid px-3" style="max-width:940px; margin:0 auto;">
+    <a class="navbar-brand" href="index.html">panickkalambay.github.io</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+        <li class="nav-item"><a class="nav-link active" href="teaching.html">Teaching</a></li>
+        <li class="nav-item"><a class="nav-link" href="misc.html">Misc</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
+<div class="page-wrap">
+
+  <h1 class="page-title">Teaching</h1>
+  <p class="page-subtitle">
+    Texas Southern University &nbsp;·&nbsp; Department of Civil Engineering
+  </p>
+
+  <!-- Teaching Philosophy -->
+  <div class="sec-title">Teaching Philosophy</div>
+  <div class="philosophy-box">
+    <p>
+      I believe effective engineering education bridges rigorous theory with real-world
+      problem-solving. My courses emphasize critical thinking, data literacy, and the
+      application of quantitative methods to practical transportation and infrastructure
+      challenges.
+    </p>
+    <p>
+      I am committed to fostering an inclusive learning environment where students from
+      diverse backgrounds feel supported in developing both technical competence and
+      professional communication skills. I actively integrate current research — including
+      GIS, machine learning, and crash data analysis — into course material to keep
+      students engaged with the frontier of the field.
+    </p>
+  </div>
+
+  <!-- Current Courses -->
+  <div class="sec-title">Current Courses <small style="font-family:'Lato',sans-serif; font-weight:400; font-size:0.75rem; color:#27ae60; margin-left:0.5rem;">● Spring 2026</small></div>
+  <div class="courses-grid">
+
+    <!-- Course 1 -->
+    <div class="course-card">
+      <div class="current-dot"></div>
+      <div class="course-tag tag-current">Current</div>
+      <div class="course-code">CIVE 3310</div>
+      <div class="course-title">Transportation Engineering</div>
+      <div class="course-meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Spring 2026
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Undergraduate
+        </span>
+      </div>
+      <div class="course-desc">
+        Introduction to transportation systems, traffic flow theory, highway design,
+        capacity analysis, and transportation planning methods.
+      </div>
+    </div>
+
+    <!-- Course 2 -->
+    <div class="course-card">
+      <div class="current-dot"></div>
+      <div class="course-tag tag-current">Current</div>
+      <div class="course-code">CIVE 5420</div>
+      <div class="course-title">Traffic Safety Engineering</div>
+      <div class="course-meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Spring 2026
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Graduate
+        </span>
+      </div>
+      <div class="course-desc">
+        Crash data analysis, safety performance functions, countermeasure evaluation,
+        road safety audits, and human factors in transportation safety.
+      </div>
+    </div>
+
+    <!-- Course 3 -->
+    <div class="course-card">
+      <div class="current-dot"></div>
+      <div class="course-tag tag-current">Current</div>
+      <div class="course-code">CIVE 6610</div>
+      <div class="course-title">GIS Applications in Civil Engineering</div>
+      <div class="course-meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Spring 2026
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Graduate
+        </span>
+      </div>
+      <div class="course-desc">
+        Spatial data collection, geodatabases, network analysis, and geostatistical
+        methods applied to infrastructure planning and transportation problems.
+      </div>
+    </div>
+
+  </div><!-- /courses-grid -->
+
+  <!-- Past Courses -->
+  <div class="sec-title">Past Courses</div>
+  <table class="sem-table">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Title</th>
+        <th>Semester</th>
+        <th class="role-cell">Role</th>
+        <th class="inst-cell">Institution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="course-code-cell">CIVE 3310</td>
+        <td><span class="course-name-cell">Transportation Engineering</span></td>
+        <td>Fall 2025</td>
+        <td class="role-cell">Instructor</td>
+        <td class="inst-cell">Texas Southern University</td>
+      </tr>
+      <tr>
+        <td class="course-code-cell">CIVE 4420</td>
+        <td><span class="course-name-cell">Highway Design</span></td>
+        <td>Fall 2025</td>
+        <td class="role-cell">Instructor</td>
+        <td class="inst-cell">Texas Southern University</td>
+      </tr>
+      <tr>
+        <td class="course-code-cell">CE 3201</td>
+        <td><span class="course-name-cell">Introduction to Transportation Systems</span></td>
+        <td>Spring 2022</td>
+        <td class="role-cell">Teaching Assistant</td>
+        <td class="inst-cell">UNC Charlotte</td>
+      </tr>
+      <tr>
+        <td class="course-code-cell">CE 5410</td>
+        <td><span class="course-name-cell">Advanced Traffic Engineering</span></td>
+        <td>Fall 2021</td>
+        <td class="role-cell">Teaching Assistant</td>
+        <td class="inst-cell">UNC Charlotte</td>
+      </tr>
+      <tr>
+        <td class="course-code-cell">CE 3200</td>
+        <td><span class="course-name-cell">Transportation Planning</span></td>
+        <td>Spring 2021</td>
+        <td class="role-cell">Teaching Assistant</td>
+        <td class="inst-cell">UNC Charlotte</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Office Hours -->
+  <div class="sec-title">Office Hours</div>
+  <div class="oh-grid">
+    <div class="oh-card">
+      <div class="oh-day">Monday &amp; Wednesday</div>
+      <div class="oh-time">2:00 PM – 3:30 PM</div>
+      <div class="oh-location">Spearman Technology Bldg, Rm 208</div>
+    </div>
+    <div class="oh-card">
+      <div class="oh-day">Friday</div>
+      <div class="oh-time">10:00 AM – 11:30 AM</div>
+      <div class="oh-location">Spearman Technology Bldg, Rm 208</div>
+    </div>
+    <div class="oh-card">
+      <div class="oh-day">By Appointment</div>
+      <div class="oh-time">Anytime (via email)</div>
+      <div class="oh-location">In-person or Zoom</div>
+    </div>
+  </div>
+  <p class="oh-note">
+    Students are always welcome to come by during office hours without an appointment.
+    For meetings outside regular hours, please email
+    <a href="mailto:panick.kalambay@tsu.edu">panick.kalambay@tsu.edu</a>
+    to schedule a time.
+  </p>
+
+  <!-- Students -->
+  <div class="sec-title">For Prospective Students</div>
+  <div class="philosophy-box" style="border-left-color: #2060b0;">
+    <p>
+      I am actively looking for <strong>motivated Ph.D. and M.S. students</strong>
+      interested in transportation safety, GIS, or machine learning applications in
+      civil engineering. Funded positions (RA/TA) may be available depending on
+      current project funding.
+    </p>
+    <p>
+      Interested candidates should send an email to
+      <a href="mailto:panick.kalambay@tsu.edu" style="color:#2060b0;">panick.kalambay@tsu.edu</a>
+      with the subject line <em>"Prospective Student — [Your Name]"</em>, attaching
+      a CV, unofficial transcripts, and a brief paragraph describing your research interests.
+    </p>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<div class="page-footer">
+  © 2025 Panick Kalambay &nbsp;·&nbsp; Texas Southern University &nbsp;·&nbsp;
+  Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
