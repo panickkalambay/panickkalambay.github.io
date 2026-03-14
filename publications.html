@@ -10,135 +10,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Lato', sans-serif; font-size: 15px; color: #333; background: #fff; }
-
-    /* NAVBAR */
     .navbar { border-bottom: 1px solid #e5e5e5; background: #fff !important; padding: 0.55rem 0; }
     .navbar-brand { font-weight: 700; font-size: 1rem; color: #222 !important; }
     .nav-link { font-size: 0.88rem; color: #555 !important; padding: 0.35rem 0.85rem !important; transition: color 0.15s; }
     .nav-link:hover { color: #c0392b !important; }
     .nav-link.active { color: #c0392b !important; font-weight: 700; }
-
-    /* PAGE */
     .page-wrap { max-width: 940px; margin: 2.5rem auto 5rem; padding: 0 1.5rem; }
-
     .page-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
     .page-title { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 700; color: #111; margin: 0; }
-    .scholar-btn {
-      font-size: 0.82rem; color: #2060b0; text-decoration: none;
-      border: 1px solid #c5d8f5; padding: 0.3rem 0.85rem; border-radius: 4px;
-      display: inline-flex; align-items: center; gap: 0.4rem; transition: background 0.15s;
-    }
+    .scholar-btn { font-size: 0.82rem; color: #2060b0; text-decoration: none; border: 1px solid #c5d8f5; padding: 0.3rem 0.85rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.4rem; transition: background 0.15s; }
     .scholar-btn:hover { background: #f0f5ff; color: #2060b0; }
-
     .page-note { font-size: 0.83rem; color: #888; margin-bottom: 2rem; }
     .page-note a { color: #2060b0; text-decoration: none; }
     .page-note a:hover { text-decoration: underline; }
-
-    /* YEAR HEADING */
-    .year-heading {
-      display: flex; align-items: center; gap: 0.75rem;
-      margin: 2.25rem 0 0.5rem;
-    }
+    .year-heading { display: flex; align-items: center; gap: 0.75rem; margin: 2.25rem 0 0.5rem; }
     .year-label { font-family: 'Merriweather', serif; font-size: 1rem; font-weight: 700; color: #111; white-space: nowrap; }
     .year-line { flex: 1; height: 1px; background: #e5e5e5; }
     .year-count { font-size: 0.72rem; color: #aaa; white-space: nowrap; }
-
-    /* PUB ENTRY */
-    .pub-entry {
-      display: flex; gap: 1.25rem; padding: 1.3rem 0;
-      border-bottom: 1px solid #f0f0f0; align-items: flex-start;
-    }
+    .pub-entry { display: flex; gap: 1.25rem; padding: 1.3rem 0; border-bottom: 1px solid #f0f0f0; align-items: flex-start; }
     .pub-entry:last-child { border-bottom: none; }
-
-    /* Thumbnail */
     .pub-thumb { width: 115px; flex-shrink: 0; margin-top: 3px; }
-    .pub-thumb img { width: 115px; height: 80px; object-fit: cover; border: 1px solid #ddd; border-radius: 3px; display: block; }
-    .pub-thumb-placeholder {
-      width: 115px; height: 80px;
-      background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 3px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
-    }
+    .pub-thumb-placeholder { width: 115px; height: 80px; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
     .pub-thumb-placeholder svg { width: 20px; height: 20px; color: #ccc; }
     .pub-thumb-placeholder span { font-size: 0.6rem; color: #ccc; letter-spacing: 0.05em; }
-
-    /* Details */
     .pub-details { flex: 1; min-width: 0; }
-
     .pub-badges { margin-bottom: 0.4rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
-    .pub-badge {
-      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.15rem 0.55rem; border-radius: 3px;
-    }
+    .pub-badge { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.15rem 0.55rem; border-radius: 3px; }
     .badge-journal   { background: #eaf3fb; color: #1a6fa8; }
     .badge-conf      { background: #fef3e2; color: #b5620a; }
-    .badge-preprint  { background: #f3f0fa; color: #6040a0; }
-    .badge-award     { background: #fdecea; color: #c0392b; }
+    .badge-report    { background: #f3f0fa; color: #6040a0; }
     .badge-highlight { background: #eaf6ef; color: #1a7a3e; }
-
     .pub-title { font-size: 0.95rem; font-weight: 700; color: #111; line-height: 1.45; margin-bottom: 0.28rem; }
     .pub-title a { color: #111; text-decoration: none; }
     .pub-title a:hover { color: #2060b0; text-decoration: underline; }
-
     .pub-authors { font-size: 0.84rem; color: #555; margin-bottom: 0.22rem; line-height: 1.5; }
-    .pub-authors a { color: #2060b0; text-decoration: none; }
-    .pub-authors a:hover { text-decoration: underline; }
     .pub-authors .me { font-weight: 700; color: #222; }
-
     .pub-venue { font-size: 0.84rem; font-style: italic; color: #666; margin-bottom: 0.5rem; }
-
     .pub-links { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; align-items: center; }
-    .pub-link {
-      font-size: 0.76rem; color: #2060b0; text-decoration: none;
-      border: 1px solid #c5d8f5; padding: 0.1rem 0.55rem; border-radius: 3px;
-      transition: background 0.15s, color 0.15s; white-space: nowrap;
-    }
+    .pub-link { font-size: 0.76rem; color: #2060b0; text-decoration: none; border: 1px solid #c5d8f5; padding: 0.1rem 0.55rem; border-radius: 3px; transition: background 0.15s, color 0.15s; white-space: nowrap; }
     .pub-link:hover { background: #2060b0; color: #fff; border-color: #2060b0; }
     .pub-link.doi { color: #c0392b; border-color: #f5c5c0; }
     .pub-link.doi:hover { background: #c0392b; color: #fff; border-color: #c0392b; }
-
-    .bib-btn {
-      font-size: 0.76rem; color: #888; border: 1px solid #ddd;
-      padding: 0.1rem 0.55rem; border-radius: 3px; background: none;
-      cursor: pointer; transition: background 0.15s, color 0.15s;
-    }
+    .bib-btn { font-size: 0.76rem; color: #888; border: 1px solid #ddd; padding: 0.1rem 0.55rem; border-radius: 3px; background: none; cursor: pointer; transition: background 0.15s, color 0.15s; }
     .bib-btn:hover { background: #f5f5f5; color: #333; }
-
-    .bib-block {
-      display: none; background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 3px;
-      padding: 0.75rem 1rem; font-family: 'Courier New', monospace;
-      font-size: 0.74rem; line-height: 1.65; color: #333;
-      margin-top: 0.5rem; white-space: pre-wrap; word-break: break-all;
-    }
+    .bib-block { display: none; background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 3px; padding: 0.75rem 1rem; font-family: 'Courier New', monospace; font-size: 0.74rem; line-height: 1.65; color: #333; margin-top: 0.5rem; white-space: pre-wrap; word-break: break-all; }
     .bib-block.open { display: block; }
-
     .pub-summary { font-size: 0.83rem; color: #666; line-height: 1.65; margin-top: 0.35rem; }
-
-    /* UNDER CONSTRUCTION NOTE */
-    .under-construction {
-      margin-top: 2.5rem; padding: 1rem 1.25rem;
-      background: #fffbf0; border: 1px solid #f0d080;
-      border-radius: 4px; font-size: 0.85rem; color: #666; line-height: 1.7;
-    }
-    .under-construction strong { color: #333; }
+    .under-construction { margin-top: 2.5rem; padding: 1rem 1.25rem; background: #fffbf0; border: 1px solid #f0d080; border-radius: 4px; font-size: 0.85rem; color: #666; line-height: 1.7; }
     .under-construction a { color: #2060b0; text-decoration: none; }
-    .under-construction a:hover { text-decoration: underline; }
-
-    /* FOOTER */
-    .page-footer {
-      border-top: 1px solid #e5e5e5; padding: 1rem 1.5rem;
-      max-width: 940px; margin: 0 auto; font-size: 0.78rem; color: #999;
-    }
+    .page-footer { border-top: 1px solid #e5e5e5; padding: 1rem 1.5rem; max-width: 940px; margin: 0 auto; font-size: 0.78rem; color: #999; }
     .page-footer a { color: #999; }
-
-    @media (max-width: 600px) {
-      .pub-thumb { display: none; }
-      .page-header { flex-direction: column; align-items: flex-start; }
-    }
+    @media (max-width: 600px) { .pub-thumb { display: none; } .page-header { flex-direction: column; align-items: flex-start; } }
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-md sticky-top">
   <div class="container-fluid px-3" style="max-width:940px; margin:0 auto;">
     <a class="navbar-brand" href="index.html">panickkalambay.github.io</a>
@@ -156,147 +82,197 @@
   </div>
 </nav>
 
-<!-- MAIN -->
 <div class="page-wrap">
-
   <div class="page-header">
     <h1 class="page-title">Publications</h1>
-    <a class="scholar-btn" href="https://scholar.google.com" target="_blank">
+    <a class="scholar-btn" href="https://scholar.google.com/citations?user=9ajdZaEAAAAJ" target="_blank">
       <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
       Google Scholar
     </a>
   </div>
   <p class="page-note">
-    * denotes equal contribution. &nbsp;|&nbsp;
-    Full list available on <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+    Full list on <a href="https://scholar.google.com/citations?user=9ajdZaEAAAAJ" target="_blank">Google Scholar</a>
     and <a href="https://www.researchgate.net/profile/Panick-Kalambay" target="_blank">ResearchGate</a>.
   </p>
 
-  <!-- ══════════ 2025 ══════════ -->
+  <!-- 2026 -->
+  <div class="year-heading">
+    <div class="year-label">2026</div>
+    <div class="year-line"></div>
+    <div class="year-count">4 papers</div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
+    <div class="pub-details">
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
+      <div class="pub-title"><a href="https://doi.org/10.1016/j.jth.2026.102279" target="_blank">Older Adults and Comfort in Sharing the Road Alongside Autonomous Vehicles: An Examination of Travel Stress, Labeling, and Dedicated Lanes</a></div>
+      <div class="pub-authors"><span class="me">Panick Kalambay</span>, Murungi Elisabeth Mwebessa, Subasish Das, Angela Kitali</div>
+      <div class="pub-venue">Journal of Transport &amp; Health, Vol. 48, 102279, 2026</div>
+      <div class="pub-links">
+        <a class="pub-link doi" href="https://doi.org/10.1016/j.jth.2026.102279" target="_blank">DOI</a>
+        <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S2214140526000277" target="_blank">ScienceDirect</a>
+        <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
+      </div>
+      <div class="bib-block">@article{kalambay2026older,
+  title     = {Older Adults and Comfort in Sharing the Road Alongside Autonomous Vehicles: An Examination of Travel Stress, Labeling, and Dedicated Lanes},
+  author    = {Kalambay, Panick and Mwebessa, Murungi Elisabeth and Das, Subasish and Kitali, Angela},
+  journal   = {Journal of Transport \& Health},
+  volume    = {48},
+  pages     = {102279},
+  year      = {2026},
+  doi       = {10.1016/j.jth.2026.102279},
+  publisher = {Elsevier}
+}</div>
+      <div class="pub-summary">Examines travel stress, dedicated lanes, and vehicle labeling as factors influencing older adults' comfort sharing roads with autonomous passenger vehicles. Reduced travel stress is a key driver of APV support, with travel comfort acting as a critical mediator.</div>
+    </div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
+    <div class="pub-details">
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
+      <div class="pub-title"><a href="https://doi.org/10.1016/j.trf.2026.103553" target="_blank">Whose Safety Should Come First in Case of an Unavoidable Crash Involving a Driverless Passenger Vehicle? A Nationwide Snapshot of Public Perceptions and Expectations</a></div>
+      <div class="pub-authors"><span class="me">Panick Kalambay</span>, Ahmed Hossain, Subasish Das</div>
+      <div class="pub-venue">Transportation Research Part F: Traffic Psychology and Behaviour, Vol. 118, 103553, 2026</div>
+      <div class="pub-links">
+        <a class="pub-link doi" href="https://doi.org/10.1016/j.trf.2026.103553" target="_blank">DOI</a>
+        <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S1369847826000483" target="_blank">ScienceDirect</a>
+        <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
+      </div>
+      <div class="bib-block">@article{kalambay2026safety,
+  title     = {Whose Safety Should Come First in Case of an Unavoidable Crash Involving a Driverless Passenger Vehicle? A Nationwide Snapshot of Public Perceptions and Expectations},
+  author    = {Kalambay, Panick and Hossain, Ahmed and Das, Subasish},
+  journal   = {Transportation Research Part F: Traffic Psychology and Behaviour},
+  volume    = {118},
+  pages     = {103553},
+  year      = {2026},
+  doi       = {10.1016/j.trf.2026.103553},
+  publisher = {Elsevier}
+}</div>
+      <div class="pub-summary">Using a nationwide U.S. survey and a hybrid association rule mining + mixed multinomial logit framework, this study reveals how sociodemographic profiles and DPV design features shape public opinions on whose safety autonomous vehicles should prioritize in unavoidable crashes.</div>
+    </div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
+    <div class="pub-details">
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
+      <div class="pub-title"><a href="https://doi.org/10.1016/j.cstp.2026.101719" target="_blank">Autonomous Shuttles in the Public Eye: Mediators on the Path to Successful Expansion</a></div>
+      <div class="pub-authors"><span class="me">Panick Kalambay</span>, Norris Novat, Boniphace Kutela, Abimbola Ogungbire, Angela Kitali, Emmanuel Kidando</div>
+      <div class="pub-venue">Case Studies on Transport Policy, Vol. 23, 101719, 2026</div>
+      <div class="pub-links">
+        <a class="pub-link doi" href="https://doi.org/10.1016/j.cstp.2026.101719" target="_blank">DOI</a>
+        <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S2213624X26000155" target="_blank">ScienceDirect</a>
+        <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
+      </div>
+      <div class="bib-block">@article{kalambay2026shuttles,
+  title     = {Autonomous Shuttles in the Public Eye: Mediators on the Path to Successful Expansion},
+  author    = {Kalambay, Panick and Novat, Norris and Kutela, Boniphace and Ogungbire, Abimbola and Kitali, Angela and Kidando, Emmanuel},
+  journal   = {Case Studies on Transport Policy},
+  volume    = {23},
+  pages     = {101719},
+  year      = {2026},
+  doi       = {10.1016/j.cstp.2026.101719},
+  publisher = {Elsevier}
+}</div>
+      <div class="pub-summary">Using data from the CASSI autonomous shuttle pilot program in Cary and Charlotte, NC, this study identifies post-ride safety perception and intention to re-ride as key mediators of public support for autonomous shuttle expansion.</div>
+    </div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
+    <div class="pub-details">
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
+      <div class="pub-title"><a href="https://doi.org/10.1016/j.sftr.2026.101660" target="_blank">Young Novice Driver and Police Officer Interactions: A Study of Sociodemographics, Reasons for Traffic Stops, and Outcomes</a></div>
+      <div class="pub-authors"><span class="me">Panick Kalambay</span>, Francisca Kasubi, Clement Lippu, Boniphace Kutela, Angela Kitali, Emmanuel Kidando</div>
+      <div class="pub-venue">Sustainable Futures, Vol. 11, 101660, 2026</div>
+      <div class="pub-links">
+        <a class="pub-link doi" href="https://doi.org/10.1016/j.sftr.2026.101660" target="_blank">DOI</a>
+        <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S2666188826000195" target="_blank">ScienceDirect</a>
+        <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
+      </div>
+      <div class="bib-block">@article{kalambay2026novice,
+  title     = {Young Novice Driver and Police Officer Interactions: A Study of Sociodemographics, Reasons for Traffic Stops, and Outcomes},
+  author    = {Kalambay, Panick and Kasubi, Francisca and Lippu, Clement and Kutela, Boniphace and Kitali, Angela and Kidando, Emmanuel},
+  journal   = {Sustainable Futures},
+  volume    = {11},
+  pages     = {101660},
+  year      = {2026},
+  doi       = {10.1016/j.sftr.2026.101660},
+  publisher = {Elsevier}
+}</div>
+      <div class="pub-summary">Binary logistic regression and association rule mining reveal sociodemographic patterns in traffic stops involving young novice drivers in Charlotte, NC, examining reasons for stops and their outcomes.</div>
+    </div>
+  </div>
+
+  <!-- 2025 -->
   <div class="year-heading">
     <div class="year-label">2025</div>
     <div class="year-line"></div>
-    <div class="year-count">2 papers</div>
+    <div class="year-count">1 paper</div>
   </div>
 
-  <!-- Paper 1 -->
   <div class="pub-entry">
-    <div class="pub-thumb">
-      <div class="pub-thumb-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        <span>PAPER</span>
-      </div>
-    </div>
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
     <div class="pub-details">
-      <div class="pub-badges">
-        <span class="pub-badge badge-journal">Journal</span>
-      </div>
-      <div class="pub-title">Understanding Body Injury Patterns and Associated Severity of Micromobility Users Using Bayesian Networks and Text Mining</div>
-      <div class="pub-authors">
-        Abdul Ngereza, Boniphace Kutela, <span class="me">Panick Kalambay</span>
-      </div>
-      <div class="pub-venue">Transportation Research Part F: Traffic Psychology and Behaviour, 2025</div>
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
+      <div class="pub-title"><a href="https://doi.org/10.1016/j.aap.2025.108315" target="_blank">Profiling Crash-Associated Factors and Injury Risk Patterns Among Lost-in-Thought (Daydreaming) Drivers: A Combined Cluster-Sequence Analysis Approach</a></div>
+      <div class="pub-authors"><span class="me">Panick Kalambay</span>, Philip Balyagati, Angela Kitali, Emmanuel Kidando</div>
+      <div class="pub-venue">Accident Analysis &amp; Prevention, Vol. 225, 108315, 2026</div>
       <div class="pub-links">
-        <a class="pub-link doi" href="#" target="_blank">DOI</a>
+        <a class="pub-link doi" href="https://doi.org/10.1016/j.aap.2025.108315" target="_blank">DOI</a>
+        <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0001457525004038" target="_blank">ScienceDirect</a>
         <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
       </div>
-      <div class="bib-block">@article{ngereza2025micromobility,
-  title   = {Understanding Body Injury Patterns and Associated Severity of Micromobility Users Using Bayesian Networks and Text Mining},
-  author  = {Ngereza, Abdul and Kutela, Boniphace and Kalambay, Panick},
-  journal = {Transportation Research Part F},
-  year    = {2025}
+      <div class="bib-block">@article{kalambay2025daydreaming,
+  title     = {Profiling Crash-Associated Factors and Injury Risk Patterns Among Lost-in-Thought (Daydreaming) Drivers: A Combined Cluster-Sequence Analysis Approach},
+  author    = {Kalambay, Panick and Balyagati, Philip and Kitali, Angela and Kidando, Emmanuel},
+  journal   = {Accident Analysis \& Prevention},
+  volume    = {225},
+  pages     = {108315},
+  year      = {2026},
+  doi       = {10.1016/j.aap.2025.108315},
+  publisher = {Elsevier}
 }</div>
-      <div class="pub-summary">Bayesian networks and text mining methods are applied to analyze injury patterns and severity among micromobility users, offering insights for safety countermeasures.</div>
+      <div class="pub-summary">Cluster correspondence and process mining analyses identify three distinct crash types among daydreaming drivers, linking each cluster to specific road conditions, weather, driver demographics, and injury risk patterns.</div>
     </div>
   </div>
 
-  <!-- Paper 2 -->
-  <div class="pub-entry">
-    <div class="pub-thumb">
-      <div class="pub-thumb-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>PAPER</span>
-      </div>
-    </div>
-    <div class="pub-details">
-      <div class="pub-badges">
-        <span class="pub-badge badge-conf">Conference</span>
-        <span class="pub-badge badge-highlight">TRB 2025</span>
-      </div>
-      <div class="pub-title">Autonomous Shuttles in the Public Eye: Mediators on the Path to Successful Expansion</div>
-      <div class="pub-authors">
-        Abim Ogunbire, <span class="me">Panick Kalambay</span>, Norris Novat, Boni Kutela, Angela Kitali
-      </div>
-      <div class="pub-venue">Transportation Research Board Annual Meeting (TRB), Washington D.C., 2025</div>
-      <div class="pub-links">
-        <a class="pub-link" href="#" target="_blank">Paper (PDF)</a>
-        <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
-      </div>
-      <div class="bib-block">@inproceedings{ogunbire2025autonomous,
-  title     = {Autonomous Shuttles in the Public Eye: Mediators on the Path to Successful Expansion},
-  author    = {Ogunbire, Abim and Kalambay, Panick and Novat, Norris and Kutela, Boni and Kitali, Angela},
-  booktitle = {Transportation Research Board Annual Meeting},
-  year      = {2025}
-}</div>
-      <div class="pub-summary">Examines public perception mediators that influence acceptance and expansion readiness of autonomous passenger shuttles in real-world deployments.</div>
-    </div>
-  </div>
-
-  <!-- ══════════ 2024 ══════════ -->
+  <!-- 2024 -->
   <div class="year-heading">
     <div class="year-label">2024</div>
     <div class="year-line"></div>
     <div class="year-count">2 papers</div>
   </div>
 
-  <!-- Paper 3 -->
   <div class="pub-entry">
-    <div class="pub-thumb">
-      <div class="pub-thumb-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>PAPER</span>
-      </div>
-    </div>
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
     <div class="pub-details">
-      <div class="pub-badges">
-        <span class="pub-badge badge-journal">Journal</span>
-      </div>
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
       <div class="pub-title">Bridging Disciplinary Gaps in the Transportation Workforce</div>
-      <div class="pub-authors">
-        Jeffrey Walters, Philip Balyagati, <span class="me">Panick Kalambay</span>, Josiah Owusu-Danquah, Emmanuel Kidando, Angela Kitali, Heather Dillon
-      </div>
+      <div class="pub-authors">Jeffrey Walters, Philip Balyagati, <span class="me">Panick Kalambay</span>, Josiah Owusu-Danquah, Emmanuel Kidando, Angela Kitali, Heather Dillon</div>
       <div class="pub-venue">Transportation Research Record, 2024</div>
       <div class="pub-links">
         <a class="pub-link doi" href="#" target="_blank">DOI</a>
-        <a class="pub-link" href="#" target="_blank">Paper (PDF)</a>
         <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
       </div>
       <div class="bib-block">@article{walters2024bridging,
   title   = {Bridging Disciplinary Gaps in the Transportation Workforce},
-  author  = {Walters, Jeffrey and Balyagati, Philip and Kalambay, Panick and others},
+  author  = {Walters, Jeffrey and Balyagati, Philip and Kalambay, Panick and Owusu-Danquah, Josiah and Kidando, Emmanuel and Kitali, Angela and Dillon, Heather},
   journal = {Transportation Research Record},
   year    = {2024}
 }</div>
-      <div class="pub-summary">Identifies disciplinary silos in transportation engineering through a survey of 70 experts; proposes strategies for holistic cross-disciplinary training in civil engineering, AI, and planning.</div>
+      <div class="pub-summary">Survey of 70 transportation experts identifies disciplinary silos in civil engineering, AI, and planning; proposes cross-disciplinary training strategies for a more integrated transportation workforce.</div>
     </div>
   </div>
 
-  <!-- Paper 4 -->
   <div class="pub-entry">
-    <div class="pub-thumb">
-      <div class="pub-thumb-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>PAPER</span>
-      </div>
-    </div>
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
     <div class="pub-details">
-      <div class="pub-badges">
-        <span class="pub-badge badge-journal">Journal</span>
-      </div>
-      <div class="pub-title">Determining the Effectiveness of Commercial Vehicle Safety Alerts (Drivewyze)</div>
-      <div class="pub-authors">
-        Emmanuel Kidando, Angela Kitali, Mohammad Jalayer, <span class="me">Panick Kalambay</span>, Jeffrey L'Amoreaux, Amir Ibrahim, et al.
-      </div>
+      <div class="pub-badges"><span class="pub-badge badge-report">Report</span></div>
+      <div class="pub-title"><a href="https://rosap.ntl.bts.gov/view/dot/86086" target="_blank">Determining the Effectiveness of Commercial Vehicle Safety Alerts (Drivewyze)</a></div>
+      <div class="pub-authors">Emmanuel Kidando, Angela Kitali, Mohammad Jalayer, <span class="me">Panick Kalambay</span>, Jeffrey L'Amoreaux, Amir Ibrahim, et al.</div>
       <div class="pub-venue">Ohio Department of Transportation / FHWA Research Report, 2024</div>
       <div class="pub-links">
         <a class="pub-link" href="https://rosap.ntl.bts.gov/view/dot/86086" target="_blank">Report (PDF)</a>
@@ -312,89 +288,72 @@
     </div>
   </div>
 
-  <!-- 
-   ══════════ 2023 ══════════
+  <!-- 2022 -->
   <div class="year-heading">
-    <div class="year-label">2023</div>
+    <div class="year-label">2022</div>
     <div class="year-line"></div>
-    <div class="year-count">2 papers</div>
+    <div class="year-count">1 paper</div>
   </div>
 
-  Paper 5
   <div class="pub-entry">
-    <div class="pub-thumb">
-      <div class="pub-thumb-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>PAPER</span>
-      </div>
-    </div>
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
     <div class="pub-details">
-      <div class="pub-badges">
-        <span class="pub-badge badge-journal">Journal</span>
-      </div>
-      <div class="pub-title">Deep Learning, Machine Learning, or Statistical Models for Weather-Related Crash Severity Prediction</div>
-      <div class="pub-authors">
-        Abimbola Ogungbire, <span class="me">Panick Kalambay</span>, Hardik Gajera, Srinivas S. Pulugurtha
-      </div>
-      <div class="pub-venue">Mineta Transportation Institute Research Report / USDOT UTC Program, 2023</div>
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
+      <div class="pub-title">A Before-After Impact Assessment of COVID-19 Outbreak on Bike-Sharing Ridership in Washington, DC</div>
+      <div class="pub-authors"><span class="me">Panick Kalambay</span>, Boniphace Kutela</div>
+      <div class="pub-venue">Transportation Research Interdisciplinary Perspectives, 2022</div>
       <div class="pub-links">
-        <a class="pub-link" href="https://rosap.ntl.bts.gov/view/dot/73228" target="_blank">Report (PDF)</a>
-        <a class="pub-link" href="https://rosap.ntl.bts.gov/view/dot/73228" target="_blank">Dataset</a>
+        <a class="pub-link doi" href="#" target="_blank">DOI</a>
         <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
       </div>
-      <div class="bib-block">@techreport{ogungbire2023weather,
-  title       = {Deep Learning, Machine Learning, or Statistical Models for Weather-Related Crash Severity Prediction},
-  author      = {Ogungbire, Abimbola and Kalambay, Panick and Gajera, Hardik and Pulugurtha, Srinivas S.},
-  institution = {Mineta Transportation Institute},
-  year        = {2023}
+      <div class="bib-block">@article{kalambay2022bikeshare,
+  title   = {A Before-After Impact Assessment of COVID-19 Outbreak on Bike-Sharing Ridership in Washington, DC},
+  author  = {Kalambay, Panick and Kutela, Boniphace},
+  journal = {Transportation Research Interdisciplinary Perspectives},
+  year    = {2022}
 }</div>
-      <div class="pub-summary">Comparative evaluation of deep learning, machine learning, and traditional statistical models for predicting injury severity in weather-related crashes, with model selection guidance based on application context.</div>
+      <div class="pub-summary">Mixed-effects negative binomial models assess the impact of COVID-19 on Capital Bikeshare ridership in Washington D.C., comparing 2019 and 2020 usage across user types and seasonal effects.</div>
     </div>
   </div>
 
-  Paper 6
+  <!-- 2021 -->
+  <div class="year-heading">
+    <div class="year-label">2021</div>
+    <div class="year-line"></div>
+    <div class="year-count">1 paper</div>
+  </div>
+
   <div class="pub-entry">
-    <div class="pub-thumb">
-      <div class="pub-thumb-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>PAPER</span>
-      </div>
-    </div>
+    <div class="pub-thumb"><div class="pub-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PAPER</span></div></div>
     <div class="pub-details">
-      <div class="pub-badges">
-        <span class="pub-badge badge-journal">Journal</span>
-      </div>
-      <div class="pub-title">Data-Driven Exploration of Traffic Speed Patterns to Identify Potential Road Links for Variable Speed Limit Sign Implementation</div>
-      <div class="pub-authors">
-        <span class="me">Panick Kalambay</span>, Srinivas S. Pulugurtha
-      </div>
-      <div class="pub-venue">Mineta Transportation Institute Research Report, 2023</div>
+      <div class="pub-badges"><span class="pub-badge badge-journal">Journal</span></div>
+      <div class="pub-title">Exploring Geographical Distribution of Transportation Research Themes Related to COVID-19 Using Text Network Approach</div>
+      <div class="pub-authors">Boniphace Kutela, <span class="me">Panick Kalambay</span>, et al.</div>
+      <div class="pub-venue">Transportation Research Interdisciplinary Perspectives, 2021</div>
       <div class="pub-links">
-        <a class="pub-link" href="https://transweb.sjsu.edu/research/2318-Traffic-Speed-Patterns-Variable-Speed-Limit" target="_blank">Report (PDF)</a>
+        <a class="pub-link doi" href="#" target="_blank">DOI</a>
+        <a class="pub-link" href="https://www.researchgate.net/publication/348723513" target="_blank">ResearchGate</a>
         <button class="bib-btn" onclick="toggleBib(this)">BibTeX</button>
       </div>
-      <div class="bib-block">@techreport{kalambay2023vsl,
-  title       = {Data-Driven Exploration of Traffic Speed Patterns to Identify Potential Road Links for Variable Speed Limit Sign Implementation},
-  author      = {Kalambay, Panick and Pulugurtha, Srinivas S.},
-  institution = {Mineta Transportation Institute},
-  year        = {2023}
+      <div class="bib-block">@article{kutela2021covid,
+  title   = {Exploring Geographical Distribution of Transportation Research Themes Related to COVID-19 Using Text Network Approach},
+  author  = {Kutela, Boniphace and Kalambay, Panick and others},
+  journal = {Transportation Research Interdisciplinary Perspectives},
+  year    = {2021}
 }</div>
-      <div class="pub-summary">Leverages traffic speed data analytics to identify highway segments best suited for variable speed limit implementation, supporting proactive safety management strategies.</div>
+      <div class="pub-summary">Text network analysis of 400+ COVID-19 transportation articles reveals geographic patterns in research themes, with the US focusing on travel impacts, China on Wuhan travel, and Japan on cruise ship incidents.</div>
     </div>
   </div>
-  -->
 
-  <!-- Under construction note -->
   <div class="under-construction">
-    <strong>🚧 Under construction:</strong> This list includes only selected publications identified from public databases.
-    Full and updated list on
-    <a href="https://scholar.google.com" target="_blank">Google Scholar</a> and
+    <strong>🚧 Note:</strong> Additional publications may be missing. Full list on
+    <a href="https://scholar.google.com/citations?user=9ajdZaEAAAAJ" target="_blank">Google Scholar</a> and
     <a href="https://www.researchgate.net/profile/Panick-Kalambay" target="_blank">ResearchGate</a>.
+    To add a paper, just share the DOI link!
   </div>
 
-</div><!-- /page-wrap -->
+</div>
 
-<!-- FOOTER -->
 <div class="page-footer">
   © 2025 Panick Kalambay &nbsp;·&nbsp; Texas Southern University &nbsp;·&nbsp;
   Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
